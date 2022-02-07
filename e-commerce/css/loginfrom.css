@@ -1,0 +1,125 @@
+body{
+    padding: 0;
+    margin: 0;
+    
+}
+.account{
+    
+    text-align: center;
+    font-size: 25px;
+    line-height: 78px;
+    color: white;
+    background-image:url(../img/banner.jpg) ;
+    height: 80px;
+   
+}
+
+.main{
+    margin-top: 100px;
+    margin-left: 300px;
+    margin-right: 300px;
+    display: flex;
+}
+
+.login{
+    width: 50%;
+    height: 301px;
+    
+    color: rgb(0, 0, 0);
+    font-size: 29px;
+    margin: 60px 15px;
+}
+.input input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+}
+.input input[type=submit]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: yellowgreen;
+    cursor: pointer;
+}
+
+.login-footer{
+    display: flex;
+    font-size: 20px;
+    width: 100%;
+}
+
+#fb{
+    border: 1px solid rgb(10, 135, 207);
+    margin: 25px 0px;
+    background-color: rgb(17, 121, 206);
+    padding: 7px;
+    width: 34%;
+    text-align: center;
+}
+
+#google{
+    border: 1px solid rgb(209, 80, 80);
+    background-color: rgb(223, 77, 77);
+    margin: 26px 50px;
+    width:33%;
+    text-align: center;
+    padding: 7px;
+}
+
+#twitter{
+    border: 1px solid rgb(78, 16, 194);
+    background-color: rgb(114, 68, 221);
+    margin: 26px 50px;
+    width: 33%;
+    text-align: center;
+    padding: 7px;
+}
+
+
+
+
+
+
+
+.creataccount{
+    width: 50%;
+    height: 301px;
+    color: black;
+    
+    font-size: 29px;
+    margin: 60px -7px;
+}
+
+#input input{
+    
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 4px;
+        box-sizing: border-box;
+        
+    
+}
+
+#input input[type=submit]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: yellowgreen;
+    cursor: pointer;
+}
