@@ -1,0 +1,100 @@
+.header{
+    background-image: url(../img/banner.jpg);
+    width: 100%;
+    height: 80px;
+    color: white;
+    line-height: 78px;
+    text-align: center;
+   
+}
+
+   
+.main{
+    margin: 0px 130px 0px 130px;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px;
+}
+.table-header{
+    background-color: #ddd;
+}
+.table-header th {
+    width:16% ;
+    height: 40px;
+    text-align: center;
+    
+
+
+}
+.table-body{
+    text-align: center;
+}
+.table-body td{
+    padding: 10px;
+}
+.table-body img{
+    width: 70px;
+    height: 60px;
+}
+
+.coupon{
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+}
+.coupon-1{
+    display: flex;
+}
+.coupon-1-1{
+    border: 1px solid #81AC27;
+    background-color: #81AC27;
+    height: 40px;
+    width: 150px;
+    text-align: center;
+    line-height: 34px;
+    font-size: 20px;
+    color: white;
+    margin: 0 48px;
+    cursor: pointer;
+}
+.coupon-1 input{
+    border: 1px solid #c4c4c4;
+    background-color: #cccccb;
+    height: 38px;
+    width: 270px;
+    text-align: center;
+    line-height: 34px;
+    font-size: 20px;
+    color: white;
+
+}
+.coupon .coupon-2 a{
+    float: right;
+    margin: 0px -550px;
+    border: 1px solid #c8c9c7;
+    background-color: #81AC27;
+    height: 35px;
+    width: 129px;
+    text-align: center;
+    line-height: 34px;
+    font-size: 20px;
+    color: white;
+}
+
+.cart-out{
+    width: 100%;
+    display: flex;
+
+}
+.cart-out-1{
+    width: 50%;
+}
+.cart-out-2{
+    width: 50%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 10px 15px;
+    border: 2px solid #c8c9c7;
+}
