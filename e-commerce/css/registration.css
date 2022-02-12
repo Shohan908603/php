@@ -1,64 +1,83 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  /* Add padding to containers */
-  .container {
-    padding: 16px;
-    background-color: rgb(24, 224, 198);
-    text-align: center;
-  }
-  
-  /* Full-width input fields */
-  input[type=text], input[type=password] {
+
+.container{
     width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
+    height: auto;
+    display: flex;
+}
+
+
+.main{
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 50px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 5px 0;
+    display: flex;
     
-  }
-  
-  input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-  
-  /* Overwrite default styles of hr */
-  hr {
-    border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
-  }
-  
-  /* Set a style for the submit button */
-  .registerbtn {
-    background-color: #7bd6f1;
-    color: white;
-    padding: 16px 20px;
-    margin: 8px 0;
+}
+.main-margin{
+    padding: 7px;
+}
+.text{
+    border: 2px solid;
+    border-radius: 5px;
+    height: 25px;
+    background-color: #81AC27;
     border: none;
+    color: white;
+}
+.email{
+    border: 2px solid;
+    border-radius: 5px;
+    height: 25px;
+    width: 290px;
+    background-color: #81AC27;
+    border: none;
+    color: white;
+}
+.comment{
+    border: 2px solid;
+    border-radius: 5px;
+    height: auto;
+    width: 290px;
+    background-color: #81AC27;
+    border: none;
+    color: white;
+}
+.register{
+    border: 2px solid;
+    border-radius: 5px;
+    height: 30px;
+    background-color: #81AC27;
+    border: none;
+    color: white;
     cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-  }
-  
-  .registerbtn:hover {
-    opacity: 1;
-  }
-  
-  /* Add a blue text color to links */
-  a {
-    color: rgb(199, 15, 15);
-  }
-  
-  /* Set a grey background color and center the text of the "sign in" section */
-  .signin {
-    background-color: #f1f1f1;
+   
+}
+
+.main-right{
+    width: 50%;
+    height: auto;
     text-align: center;
-  }
+    color: #81AC27;
+    background-color: white;
+    margin-top: 70px;
+}
+h3{
+    margin-top: 110px;
+    font-size: 20px;
+}
+
+.submit{
+    border: 2px solid;
+    border-radius: 5px;
+    height: 30px;
+    background-color: #81AC27;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.icon{
+    word-spacing: 30px;
+}
