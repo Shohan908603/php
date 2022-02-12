@@ -1,12 +1,47 @@
 <?php
 
+$error = [];
+if ($_POST) {
+    $name_pattern = '/^[a-zA-Z-\' ]*$/';
+    $email_pattern = '/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/';
+    
 
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
+    $uppercase = preg_match('@[A-Z]@', ($_POST['password']));
+    $lowercase = preg_match('@[a-z]@', ($_POST['password']));
+    $number    = preg_match('@[0-9]@', ($_POST['password']));
 
 
+    if (!preg_match($name_pattern, ($_POST['fristname']))) {
+        $error['fristname'] = 'Enter your valid name [a-z/A-Z]';
+        
 
+    }
+    if (!preg_match($name_pattern, ($_POST['lastname']))) {
+        $error['lastname'] = 'Enter your valid name [a-z/A-Z ]';
+
+    }
+    if (!preg_match($email_pattern, ($_POST['email']))) {
+        $error['email'] = 'Enter vaild email [a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}';
+    }
+
+    if (!$uppercase || !$lowercase || !$number || strlen($_POST['password']) < 10) {
+        $error['password'] = 'Enter vaild password ([A-Z/a-z/0-9]<10)';
+    }
+
+    echo ("<pre>");
+    print_r($_POST);
+    echo ("</pre>");
+}
+
+
+ 
+/*function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}*/
 ?>
 
 
@@ -27,19 +62,39 @@ echo "</pre>";
 <body>
     <div class="main">
         <h2 style="text-align: center;">Validation From</h2>
-        <form class="from-section" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form class="from-section" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 
             <b><label>Frist Name :<br></label></b>
-            <input type="text" class="text" name="Frist name" placeholder="Enter your name"><br><br>
+            <input type="text" class="text" name="fristname" placeholder="Enter your name"><br><br>
+
+            <b><p style="color:white;">
+            <?php echo $error['fristname'] ?? '' ?>
+            </p></b>
+
+
+
+
             <b><label>Last Name :<br></label></b>
-            <input type="text" class="text" name="Last name" placeholder="Enter your name"><br><br>
+            <input type="text" class="text" name="lastname" placeholder="Enter your name"><br><br>
+
+            <b><p  style="color:white;">
+                <?php echo $error['lastname'] ?? '' ?>
+            </p></b>
+
 
             <b><label>Password :<br></label></b>
-            <input type="password" class="text" name="Password" placeholder="Enter your password"><br><br>
+            <input type="password" class="text" name="password" placeholder="Enter your password"><br><br>
+
+            <b><p  style="color:white;">
+                <?php echo $error['password'] ?? '' ?>
+            </p></b>
 
             <b><label>E-mail :<br></label></b>
-            <input type="email" class="text"  name="E-mail" placeholder="Enter your email"><br><br>
+            <input type="email" class="text"  name="email" placeholder="Enter your email"><br><br>
 
+           <b> <p  style="color:white;">
+                <?php echo $error['email'] ?? '' ?>
+            </p></b>
 
             <b><label>Gender :<br></label></b>
             <input type="radio" name="Female" >Female<br>
