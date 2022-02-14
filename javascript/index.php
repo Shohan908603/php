@@ -25,6 +25,7 @@
 			}
 			buttonState();
 		});
+
         $("#lname").keyup(function(){
 			if(validatelname()){
 			
@@ -36,6 +37,20 @@
 			}
 			buttonState();
 		});
+
+        $("#email").keyup(function(){
+			if(validatelname()){
+			
+				$("#email").css("border","2px solid green");
+				
+			}else{
+				$("#email").css("border","2px solid red");
+				
+			}
+			buttonState();
+		});
+
+
 		
 	});
 
@@ -44,7 +59,7 @@
 		
 		var name=$("#fname").val();
 		
-		 var reg = /^[a-zA-Z\-]+$/
+		 var reg = /^[a-zA-Z\:-]+$/
 		 if(reg.test(name)){
 		 	return true;
 		 }else{
@@ -64,6 +79,19 @@
 		 	return false;
 		 }
 	}
+
+
+    function validateemail(){
+        var email=$("#email").val();
+
+        var reg = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+        if (reg.test(email)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 	
 </script>
 
@@ -131,8 +159,8 @@
             </div>
 
             <div style="padding-left: 40px; padding-top: 5%;">
-                <input type="checkbox" id="checkbox" name="checkbox">I accept the <span style="color: #4106c9;cursor: pointer;">Terms and Conditions</span><br>
-                <input type="checkbox" id="checkbox" name="checkbox">I accept the <span style="color: #4106c9; cursor: pointer;">Code of Conduct & Ethics</span>
+                <input type="checkbox" id="checkbox" name="checkbox">&nbsp;&nbsp; I accept the <span style="color: #4106c9;cursor: pointer;">Terms and Conditions</span><br>
+                <input type="checkbox" id="checkbox" name="checkbox">&nbsp;&nbsp; I accept the <span style="color: #4106c9; cursor: pointer;">Code of Conduct & Ethics</span>
             </div>
 
             <div style="padding-left: 40px;width: 93%; padding-top: 5%;">
