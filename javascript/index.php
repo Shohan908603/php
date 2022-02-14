@@ -4,6 +4,12 @@
  echo "<pre>";
  print_r($_POST);
  echo "</pre>";
+ 
+
+
+
+
+
 
 
 ?>
@@ -73,6 +79,19 @@
             buttonSate();
         });
 
+        $("#cpassword").keyup(function(){
+            if (validatecpassword()){
+                $("#cpassword").css("border","2px solid green");
+            }
+            else{
+                $("#cpassword").css("border","2px solid red");
+            }
+            buttonSate();
+        });
+
+       
+
+
 
 		
 	});
@@ -128,6 +147,85 @@
             return false;
         }
     }
+
+    function validatecpassword(){
+        var cpassword=$("#cpassword").val();
+
+        var reg =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+        if(reg.test(cpassword)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+    
+ 
+        /*
+            var code = document.getElementById("password");
+
+            var strengthbar = document.getElementById("meter");
+            var display = document.getElementsByClassName("textbox")[0];
+
+            code.addEventListener("keyup", function() {
+            checkpassword(code.value);
+            });
+
+
+            function checkpassword(password) {
+                var strength = 0;
+                if (password.match(/[a-z]+/)) {
+                    strength += 1;
+                }
+                if (password.match(/[A-Z]+/)) {
+                    strength += 1;
+                }
+                if (password.match(/[0-9]+/)) {
+                    strength += 1;
+                }
+                if (password.match(/[$@#&!]+/)) {
+                    strength += 1;
+
+                }
+
+                if (password.length < 6) {
+                    display.innerHTML = "minimum number of characters is 6";
+                }
+
+                if (password.length > 12) {
+                    display.innerHTML = "maximum number of characters is 12";
+                }
+
+                switch (strength) {
+                    case 0:
+                    strengthbar.value = 0;
+                    break;
+
+                    case 1:
+                    strengthbar.value = 25;
+                    break;
+
+                    case 2:
+                    strengthbar.value = 50;
+                    break;
+
+                    case 3:
+                    strengthbar.value = 75;
+                    break;
+
+                    case 4:
+                    strengthbar.value = 100;
+                    break;
+                }
+            }
+            */
+    
+   
+
+    
+
 </script>
 
 
@@ -142,12 +240,12 @@
             <div style="display: flex;" >
                 <div style="padding-left:40px ;">
                     <label>Frist Name </label><br>
-                    <input type="text" id="fname" placeholder="Your Frist name" autocomplete="off" name="">
+                    <input type="text" id="fname" placeholder="Your Frist name" autocomplete="off" name="fname">
                 </div>
 
                 <div style="padding-left: 5px;">
                     <label>Last Name </label><br>
-                    <input type="text" id="lname" placeholder="Your Last name" autocomplete="off" name="">
+                    <input type="text" id="lname" placeholder="Your Last name" autocomplete="off" name="lname">
                 </div>
             </div>
 
@@ -160,19 +258,19 @@
             <div style="display: flex; padding-top: 5%;" >
                 <div style="padding-left:40px ; ">
                     <label>Mobile </label><br>
-                    <input type="number" id="mobile" placeholder="Your Phone Number" autocomplete="off" name="">
+                    <input type="number" id="mobile" placeholder="Your Phone Number" autocomplete="off" name="mobile">
                 </div>
 
                 <div style="padding-left: 5px;">
                     <label>E-mail Name </label><br>
-                    <input type="email" id="email" placeholder="Your E-mail name" autocomplete="off" name="">
+                    <input type="email" id="email" placeholder="Your E-mail name" autocomplete="off" name="email">
                     <span id="emailmsg"></span>
                 </div>
             </div>
 
             <div style="padding-left: 40px; width: 93%; padding-top: 5%;" >
                 <label>Source of funds</label><br>
-               <select class="btn btn-#FFFFFF btn-block">
+               <select class="btn btn-#FFFFFF btn-block" name="select">
                    <option>Others</option>
                    <option>Student</option>
                    <option>Teacher</option>
@@ -185,12 +283,13 @@
             <div style="display: flex; padding-top: 5%;" >
                 <div style="padding-left: 40px; " >
                     <label> Password </label><br>
-                    <input type="password" id="password" placeholder="Your Password " autocomplete="off" name="">
+                    <input type="text" id="password" placeholder="Your Password " autocomplete="off" name="password" ><br>
+                    <progress max="100" value="0" id="meter"></progress>
                 </div>
 
                 <div style="padding-left: 5px;">
                     <label>Confirm Password </label><br>
-                    <input type="password" id="password" placeholder="Your Confirm Password" autocomplete="off" name=""><br>
+                    <input type="password" id="cpassword" placeholder="Your Confirm Password" autocomplete="off" name="cpassword"><br>
                 </div>
             </div>
 
@@ -200,7 +299,7 @@
             </div>
 
             <div style="padding-left: 40px;width: 93%; padding-top: 5%;">
-                <input type="submit"  class="btn btn-success btn-block" id="button" name="" value="Button" >
+                <input type="submit"  class="btn btn-success btn-block" id="button" name="button" value="Button" >
             </div>
         </form>
     </div>
