@@ -35,13 +35,7 @@ if ($_POST) {
 
 
  
-/*function test_input($data)
-{
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}*/
+
 ?>
 
 
@@ -88,6 +82,14 @@ if ($_POST) {
             <b><p  style="color:white;">
                 <?php echo $error['password'] ?? '' ?>
             </p></b>
+
+            <b><label>Confirm Password :<br></label></b>
+            <input type="password" class="text" name="password" placeholder="Enter your Confirm password"><br><br>
+
+            <b><p  style="color:white;">
+                <?php echo $error['password'] ?? '' ?>
+            </p></b>
+
 
             <b><label>E-mail :<br></label></b>
             <input type="email" class="text"  name="email" placeholder="Enter your email"><br><br>
