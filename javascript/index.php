@@ -1,3 +1,15 @@
+<?php
+
+
+ echo "<pre>";
+ print_r($_POST);
+ echo "</pre>";
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +51,7 @@
 		});
 
         $("#email").keyup(function(){
-			if(validatelname()){
+			if(validateemail()){
 			
 				$("#email").css("border","2px solid green");
 				
@@ -49,6 +61,17 @@
 			}
 			buttonState();
 		});
+
+        $("#mobile").keyup(function(){
+            if(validatemobile()){
+
+                $("#mobile").css("border","2px solid green");
+            }
+            else{
+                $("#mobile").css("border","2px solid red");
+            }
+            buttonSate();
+        });
 
 
 		
@@ -92,14 +115,27 @@
             return false;
         }
     }
-	
+	 
+
+    function validatemobile(){
+        var mobile=$("#mobile").val();
+
+        var reg =/^\d{11}$/;
+        if(reg.test(mobile)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 </script>
 
 
 
 <body>
     <div style="padding-top: 3%;">
-        <form class="col-md-4 border shadow-sm bg-light" style="margin-top:8%;padding:10px; width: 50%; margin: auto;padding-top: 2%;">
+        <form class="col-md-4 border shadow-sm bg-light"
+         style="margin-top:8%;padding:10px; width: 50%; margin: auto;padding-top: 2%;" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);  ?>" method="post">
             <div>
                 <h2>Sign Up</h2>
             </div>
@@ -164,7 +200,7 @@
             </div>
 
             <div style="padding-left: 40px;width: 93%; padding-top: 5%;">
-                <input type="button"  class="btn btn-success btn-block" id="button" name="" value="Button" >
+                <input type="submit"  class="btn btn-success btn-block" id="button" name="" value="Button" >
             </div>
         </form>
     </div>
