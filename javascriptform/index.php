@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validate Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -73,7 +74,8 @@
             <div style="display: flex; padding-top: 5%;" >
                 <div style="padding-left: 40px; " >
                     <label> Password </label><br>
-                    <input type="password" id="password" placeholder="Your Password " autocomplete="off" name="password" ><br>
+                    <input type="password" id="password" placeholder="Your Password " autocomplete="off" name="password" >
+                    <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;" > </i><br>
                     
                 </div>
 
@@ -174,7 +176,7 @@
         var secondpassword=document.f1.cpassword.value;
 
         if(firstpassword==secondpassword){
-            alert("success");
+            alert("Password are match");
             return true;
 
         }
@@ -260,70 +262,21 @@
         }
     }
 
+    const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#password');
+ 
+  togglePassword.addEventListener('click', function (e) {
+   
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+
+    this.classList.toggle('fa-eye-slash');
+    });
+    
 
     
  
-        /*
-            var code = document.getElementById("password");
-
-            var strengthbar = document.getElementById("meter");
-            var display = document.getElementsByClassName("textbox")[0];
-
-            code.addEventListener("keyup", function() {
-            checkpassword(code.value);
-            });
-
-
-            function checkpassword(password) {
-                var strength = 0;
-                if (password.match(/[a-z]+/)) {
-                    strength += 1;
-                }
-                if (password.match(/[A-Z]+/)) {
-                    strength += 1;
-                }
-                if (password.match(/[0-9]+/)) {
-                    strength += 1;
-                }
-                if (password.match(/[$@#&!]+/)) {
-                    strength += 1;
-
-                }
-
-                if (password.length < 6) {
-                    display.innerHTML = "minimum number of characters is 6";
-                }
-
-                if (password.length > 12) {
-                    display.innerHTML = "maximum number of characters is 12";
-                }
-
-                switch (strength) {
-                    case 0:
-                    strengthbar.value = 0;
-                    break;
-
-                    case 1:
-                    strengthbar.value = 25;
-                    break;
-
-                    case 2:
-                    strengthbar.value = 50;
-                    break;
-
-                    case 3:
-                    strengthbar.value = 75;
-                    break;
-
-                    case 4:
-                    strengthbar.value = 100;
-                    break;
-                }
-            }
-            */
-    
-   
-
+      
     
 
 </script>
